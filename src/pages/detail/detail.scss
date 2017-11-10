@@ -1,0 +1,322 @@
+page-detail {
+    .content{
+        background-color: #f5f5f5;
+    }
+    .swiper-slide img{
+        width: 100%;
+    }
+    .merch{
+        padding: 10px;
+        background: #ffffff;
+        h2{
+            margin: 0 0 4px 0;
+            font-size: 16px;
+            line-height: 1.25;
+        }
+        .pic{
+            color: #fd0000;
+        }
+        del{
+            color: #9f9f9f;
+        }
+        .express{
+            margin: 0;
+            color: #9f9f9f;
+            font-size: 14px;
+        }
+    }
+    ion-list{
+        margin-bottom: 45px;
+    }
+    ion-segment{
+        margin-bottom: 2px !important;
+    }
+    .segment-ios .segment-button ion-icon,.segment-md .segment-button ion-icon{
+        font-size: 2.2rem;
+        margin-right: 6px;
+        vertical-align: middle;
+    }
+    .desc{
+        background-color: #fff;
+        margin-top: 10px;
+    }
+    .segment-ios .segment-button:first-of-type,.segment-ios .segment-button:last-of-type{
+        border-radius: 0;
+    }
+    .segment-ios .segment-button{
+        border: none;
+    }
+    .segment-ios .segment-button{
+        color: #9f9f9f;
+        & ion-icon{
+            display: none;
+        }
+    }
+    .segment-ios .segment-button.segment-activated{
+        background: transparent;
+        color: #cdb067;
+        & ion-icon{
+            display: inline-block;
+        }
+    }
+    .tabbar{
+        display: none !important;
+    }
+    .fixed-content,.scroll-content{
+        margin-bottom: 0 !important;
+    }
+
+
+    .footer-box{
+        position: fixed;
+        bottom: 0;
+        left: 0;
+        width: 100%;
+        display: flex;
+        height: 44px;
+        border-top: 1px solid #f5f5f5;
+        text-align: center;
+        z-index: 1000;
+        ion-icon{
+            font-size: 22px;
+        }
+        a{
+            display: block;
+            line-height: 44px;
+        }
+        .card{
+            padding-top: 5px;
+            width: 80px;
+            background-color: white;
+            a{
+                color: #9f9f9f;
+                line-height: inherit;
+                font-size: 12px;
+                text-decoration: none;
+            }
+        }
+        .join-card{
+            flex-grow: 1;
+            background-color: #525252;
+            a{
+                color: #fff;
+                text-decoration: none;
+            }
+        }
+        .out-date{
+            flex-grow: 1;
+            background-color: #9f9f9f;
+            color: #fff;
+            line-height: 55px;
+        }
+        .buy{
+            flex-grow: 1;
+            a{
+                color: #fff;
+                background-color: #fd0000;
+                text-decoration: none;
+            }
+        }
+    }
+
+button{
+    background-color: transparent;
+}
+    .join-card-model{
+        p{
+            margin: 0;
+        }
+        position: fixed;
+        left: 0;
+        right: 0;
+        bottom: -363px;
+        z-index: 1000;
+        background-color: #fff;
+        height: 343px;
+        .header{
+            padding: 10px;
+            height: 88px;
+            margin-bottom: 10px;
+            .img{
+                position: absolute;
+                top: -16px;
+                margin-right: 10px;
+                float: left;
+                width: 100px;
+                height: 100px;
+                border-radius: 6px;
+                overflow: hidden;
+                img{
+                    width: 100%;
+                    height: 100%;
+                }
+            }
+            .main{
+                float: left;
+                padding-left: 110px;
+                width: 100%;
+                p{
+                    height: 38px;
+                    word-break: break-all;
+                    overflow: hidden;
+                    text-overflow: ellipsis;
+                    display: -webkit-box;
+                    -webkit-line-clamp: 2;
+                    line-height: 1.2;
+                    -webkit-box-orient: vertical;
+                    font-size: 16px;
+                    margin: 0;
+                }
+                .pic{
+                    margin-top: 5px;
+                    color: #fd0000;
+                    font-size: 16px;
+                }
+            }
+            .close{
+                position: absolute;
+                width: 20px;
+                height: 20px;
+                display: block;
+                right: 0;
+                top: 5px;
+                color: #9f9f9f;
+            }
+        }
+    }
+    .select-item{
+        height: 200px;
+        overflow-y: scroll;
+        padding: 10px;
+        .items-box{
+            position: relative;
+            .tit{
+                position: relative;
+                padding-left: 10px;
+                margin-bottom: 15px;
+                overflow: hidden;
+                &:before {
+                    content: '';
+                    position: absolute;
+                    top: 2px;
+                    border-left: 2px solid #cdb067;
+                    left: 0;
+                    height: 16px;
+                }
+            }
+            .item {
+                position: relative;
+                margin-bottom: 20px;
+                margin-right: 10px;
+                display: inline-block;
+                font-size: 14px;
+                padding: 0 .25rem;
+                height: 26px;
+                background-color: transparent !important;
+                border: none;
+            }
+            .addordel{
+                top: -.25rem;
+                right: 0;
+                left: initial;
+                bottom: initial;
+            }
+        }
+    }
+    
+    .items-box {
+        .item {
+            &.active {
+                color: #fff;
+                .attr-left,
+                .attr-right,
+                .attr-center {
+                    background-image: url(../assets/images/attr_checked.png);
+                }
+            }
+    
+            &[disabled] {
+                color: #9f9f9f;
+                opacity: .55;
+            }
+    
+            & > div {
+                float: left;
+            }
+            
+            .attr-left,
+            .attr-right {
+                width: 20px;
+            }
+            .attr-left,
+            .attr-right,
+            .attr-center {
+                display: inline-block;
+                height: 25px;
+                background: url(../assets/images/attr.png) 0 0 no-repeat;
+            }
+    
+            .attr-left {
+                padding-left: .5rem;
+            }
+            .attr-center {
+                padding: 0 .05rem;
+                line-height: 24px;
+                background-repeat: repeat-x;
+                background-position: 0 -31px;
+            }
+            .attr-right {
+                padding-right: .5rem;
+                background-position-y: -62px;
+            }
+        }
+    }
+    .model-footer{
+        width: 100%;
+        height: 44px;
+        line-height: 44px;
+        text-align: center;
+        background: url(../assets/images/btn@2x.png) 50% 50% no-repeat;
+        background-size: 100% 100%;
+        a{
+            display: block;
+        }
+        input[type=button]{
+            display: block;
+            border: none;
+            height: 100%;
+            text-align: center;
+            width: 100%;
+            height: 44px;
+            font-size: 16px;
+        }
+        button{
+            display: block;
+            width: 100%;
+            color: #fff;
+            line-height: 40px;
+        }
+    }
+
+
+    .join-bottom-animate{
+        animation: bottom 0.25s linear;
+        animation-fill-mode: forwards;
+        display: block;
+    }
+    @keyframes bottom
+    {
+        0%   {bottom: -343px;}
+        100% {bottom: 0px;}
+    }
+    .mask{
+        top: 0;
+        left: 0;
+        bottom: 0;
+        position: fixed;
+        width: 100vw;
+        height: 100vh;
+        z-index: 99;
+        background-color: rgba(0, 0, 0, .4)
+    }
+}

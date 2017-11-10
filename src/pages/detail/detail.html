@@ -1,0 +1,85 @@
+<ion-content>
+  <div class="">
+    <ion-slides pager autoplay="3000" *ngIf="images?.length>0">
+      <ion-slide *ngFor="let img of images"><img [src]="img.url" alt=""></ion-slide>
+    </ion-slides>
+  </div>
+  <div class="merch" *ngIf="product">
+    <h2>{{product.name}}</h2>
+    <span class="pic">&#165;{{product.price}}</span> <del>&#165;{{product.marketPrice}}</del>
+    <p class="express">快递：<span>{{product.money}}</span></p>
+  </div>
+
+  <div class="desc">
+    <ion-segment [(ngModel)]="detail">
+      <ion-segment-button value="1">
+          <ion-icon name="archive"></ion-icon>{{test}}
+      </ion-segment-button>
+      <ion-segment-button value="2">
+          <ion-icon name="build"></ion-icon>规格参数
+      </ion-segment-button>
+      <ion-segment-button value="3">
+          <ion-icon name="text"></ion-icon>评价详情
+      </ion-segment-button>
+    </ion-segment>
+  </div>
+
+  <div [ngSwitch]="detail">
+    <ion-list *ngSwitchCase="'1'">
+        <page-good-detail [datailData]="datailData" [param]="param" (foo)="bar($event)"></page-good-detail>
+    </ion-list>
+    <ion-list *ngSwitchCase="'2'">
+        <page-good-param [paramData]="paramData" (param)="detailFn($event)"></page-good-param>
+    </ion-list>
+    <ion-list *ngSwitchCase="'3'">
+        <page-good-comment [commentData]="commentData"></page-good-comment>
+    </ion-list>
+  </div>
+<div class="footer">
+    <div class="footer-box">
+        <div class="card" (click)="goToCart()">
+            <a href="javascript:;">
+                <div><ion-icon name="cart"></ion-icon></div>
+                购物车
+            </a>
+        </div>
+        <div class="join-card" (click)="joInCart()"><a href="javascript:;">加入购物车</a></div>
+        <div class="buy"><a href="javascript:;">立即购买</a></div>
+        <!-- <div class="out-date">改商品已下架</div> -->
+    </div>
+</div>
+<div class="mask" [hidden]="showMask"></div>
+  <div class="join-card-model" [ngClass]="{'join-bottom-animate':showModel}">
+        <header class="header clearfix" *ngIf="product">
+           <div class="img">
+               <img [src]="product.cover" alt="">
+           </div>
+            <div class="main">
+                <p>{{product.name}}</p>
+                <div class="pic"><span>{{product.price}}</span></div>
+            </div>
+            <a class="close" (click)="closeCart()" href="javascript:;">
+                <ion-icon name="close-circle"></ion-icon>
+            </a>
+        </header>
+        <div class="select-item" *ngIf="paramData?.length > 0; else nullData">
+            <div class="items-box" *ngFor="let param of paramData; let j = index">
+                <p class="tit">{{param.title}}</p>
+                <button class="item" type="button" *ngFor="let spec of param.list; let i = index;"
+                 (click)="selectItem(spec.tit,i,j,$event)"
+                 [attr.data-subindex]="j"
+                 [disabled]="spec.disable"
+                  >
+                    <div class="attr-left"></div>
+                    <div class="attr-center">{{spec.tit}}</div>
+                    <div class="attr-right"></div>
+                </button>
+            </div>
+        </div>
+        <div class="model-footer">
+            <div class="btn-ugly-model" (click)="joInCartConfirm()">
+                <button type="button" class="btn go-newaddr">确认</button>
+            </div>
+        </div>
+    </div>
+</ion-content>

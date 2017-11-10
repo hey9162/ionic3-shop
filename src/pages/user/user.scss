@@ -1,0 +1,28 @@
+page-user {
+    .banner{
+        height: 200px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        background: url('/assets/images/background.png');
+        background-size: 100% 100%;
+        img{
+            width: 90px;
+            height: 90px;
+            border-radius: 50%;
+            border: 1px solid #ff9933;
+        }
+        .head{
+            text-align: center;
+            font-size: 16px;
+            color: #ffffff;
+        }
+    }
+    ion-icon {
+        display: inline-block;
+        font-size: 1.6em;
+        vertical-align: middle;
+        color: #cdb067;
+        margin-right: 6px;
+    }
+}

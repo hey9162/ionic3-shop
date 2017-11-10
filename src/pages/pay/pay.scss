@@ -1,0 +1,31 @@
+page-pay {
+    .ion-page > ion-content{
+        background-color: #f5f5f5;
+    }
+    .pay-top{
+        background-color: #ffffff;
+        line-height: 80px;
+        font-size: 16px;
+        text-align: center;
+        .total{
+            font-size: 22px;
+        }
+    }
+    .pic{
+        margin-top: 5px;
+    }
+    .ion-ios-gouwuche,.ion-md-gouwuche{
+        font-size: 40px;
+        vertical-align: sub;
+        color: #06ba03;
+        margin-right: 10px;
+    }
+    .way{
+        padding: 0 10px;
+    }
+    .button-ios,.button-md{
+        width: 90%;
+        margin: 0 auto !important;
+        left: 5%;
+    }
+}

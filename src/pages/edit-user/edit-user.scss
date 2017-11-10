@@ -1,0 +1,22 @@
+page-edit-user {
+    .button-ios,.button-md{
+        margin-top: 5em;
+        width: 90%;
+        left: 5%;
+        height: 40px;
+    }
+    .content{
+        position: relative;
+    }
+    input[type=file]{
+        position: absolute;
+        opacity: 0;
+        right: 0;
+        width: 40px;
+        height: 40px;
+    }
+    .text-input{
+        text-align: right;
+        width: 5em !important;
+    }
+}

@@ -1,0 +1,7 @@
+<ion-content>
+    <ion-slides #slides pager initialSlide="[(index)]">
+      <ion-slide *ngFor="let img of imgUrl" (click)="goToBack()">
+        <img src="{{img}}" class="slide-image"/>
+      </ion-slide>
+    </ion-slides>
+</ion-content>

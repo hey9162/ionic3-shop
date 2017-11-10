@@ -1,0 +1,246 @@
+// http://ionicframework.com/docs/theming/
+// App Global Sass
+// --------------------------------------------------
+// Put style rules here that you want to apply globally. These
+// styles are for the entire app and not just one component.
+// Additionally, this file can be also used as an entry point
+// to import other Sass files to be included in the output CSS.
+//
+// Shared Sass variables, which can be used to adjust Ionic's
+// default Sass variables, belong in "theme/variables.scss".
+//
+// To declare rules for a specific mode, create a child rule
+// for the .md, .ios, or .wp mode classes. The mode class is
+// automatically applied to the <body> element in the app.
+@font-face {
+    font-family: "Ionicons";
+    src: url('//at.alicdn.com/t/font_391477_rvui6goeb7upiudi.eot?t=1506671118203');
+    /* IE9*/
+    src: url('//at.alicdn.com/t/font_391477_rvui6goeb7upiudi.eot?t=1506671118203#iefix') format('embedded-opentype'), /* IE6-IE8 */
+    url('//at.alicdn.com/t/font_391477_zp9br0l6nrlo9a4i.woff?t=1503472531774') format('woff'), /* chrome, firefox */
+    url('//at.alicdn.com/t/font_391477_rvui6goeb7upiudi.ttf?t=1506671118203') format('truetype'), /* chrome, firefox, opera, Safari, Android, iOS 4.2+*/
+    url('//at.alicdn.com/t/font_391477_rvui6goeb7upiudi.svg?t=1506671118203#iconfont') format('svg');/* iOS 4.1- */
+}
+
+.icon {
+    font-family: "Ionicons";
+    font-style: normal;
+}
+
+.ion-ios-gouwuche:before {
+    content: "\e609";
+}
+
+.ion-ios-gouwuche-outline:before {
+    content: "\e609";
+}
+
+.ion-md-gouwuche:before {
+    content: "\e609";
+}
+
+.ion-md-gouwuche-outline:before {
+    content: "\e609";
+}
+
+.ion-ios-wode:before {
+    content: "\e617";
+}
+
+.ion-ios-wode-outline:before {
+    content: "\e617";
+}
+
+.ion-md-wode:before {
+    content: "\e617";
+}
+
+.ion-md-wode-outline:before {
+    content: "\e617";
+}
+
+.ion-ios-shouye:before {
+    content: "\e61c";
+}
+
+.ion-ios-shouye-outline:before {
+    content: "\e61c";
+}
+
+.ion-md-shouye:before {
+    content: "\e61c";
+}
+
+.ion-md-shouye-outline:before {
+    content: "\e61c";
+}
+
+.ion-ios-shangpinliebiao:before {
+    content: "\e61d";
+}
+
+.ion-ios-shangpinliebiao-outline:before {
+    content: "\e61d";
+}
+
+.ion-md-shangpinliebiao:before {
+    content: "\e61d";
+}
+
+.ion-md-shangpinliebiao-outline:before {
+    content: "\e61d";
+}
+.ion-ios-wchat:before {
+    content: "\e659";
+}
+.ion-md-wchat:before {
+    content: "\e659";
+}
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+.form-group {
+  input::-moz-input-placeholder,
+  input::-ms-input-placeholder,
+  input::-webkit-input-placeholder,
+  textarea::-moz-input-placeholder,
+  textarea::-ms-input-placeholder,
+  textarea::-webkit-input-placeholder {
+    color: color($colors, gray);
+  }
+}
+
+img {
+    vertical-align: middle;
+}
+
+.clearfix {
+    display: block;
+    &:after,
+    &:before {
+        content: '';
+        display: table;
+    }
+    &:after {
+        clear: both;
+    }
+}
+
+.btn {
+    position: relative;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    padding-left: 15px;
+    padding-right: 15px;
+    width: 100%;
+    height: 50px;
+    text-align: center;
+    line-height: 50px;
+    font-size: 17px;
+    color: #fff;
+    border: none;
+    text-decoration: none;
+    background-color: color($colors, primary);
+    border-radius: 4px;
+    overflow: hidden;
+    user-select: none;
+}
+
+.form-group {
+  @extend .clearfix;
+  margin-bottom: 15px;
+  input {
+    background-color: transparent !important;
+  }
+
+  .group-dt {
+    margin-bottom: 10px;
+    display: flex;
+    align-items: center;
+    & > label {
+      color: #5f5f5f;
+      font-size: 16px;
+      vertical-align: middle;
+    }
+    .danger {
+      margin-left: 15px;
+      font-size: 13px;
+    }
+    .iconfont {
+      margin-right: 10px;
+      display: inline-block;
+      width: 22px;
+      height: 22px;
+      line-height: 22px;
+      color: color($colors, primary);
+      font-size: 22px;
+    }
+  }
+
+  .input-control {
+    position: relative;
+    padding-left: 10px;
+    height: 35px;
+    line-height: 35px;
+    background-color: #f2f2f2;
+    border-radius: 4px;
+    input {
+      width: 90%;
+      height: inherit;
+      line-height: 1.25;
+      font-size: 15px;
+      border: none;
+      vertical-align: middle;
+    }
+  }
+
+  .input-pic {
+    position: relative;
+    margin-right: 5px;
+    width: 128px;
+    height: 114px;
+    text-align: center;
+    background-color: #f2f2f2;
+    border-radius: 4px;
+    &:last-child {
+      margin-right: 0;
+    }
+
+    input[type=file],
+    .perch, .file-img {
+      position: absolute;
+      left: 0;
+      width: 100%;
+    }
+
+    .perch, .file-img {
+      top: 50%;
+      color: color($colors, gray);
+      transform: translateY(-50%);
+    }
+
+    input[type=file] {
+      top: 0;
+      z-index: 999;
+      height: 100%;
+      opacity: 0;
+    }
+  }
+
+}
+
+.require, .danger {
+  color: color($colors, danger);
+}
+
+.submit {
+  margin-top: 30px;
+}
+
+.flex {
+  display: flex;
+}

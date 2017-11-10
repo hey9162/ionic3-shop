@@ -1,0 +1,15 @@
+<!-- 通常使用 ng-container 作为判断容器来节省标签，不会渲染到页面中 -->
+<ng-container *ngIf="goodsList?.length > 0; else nullData">
+  <section class="list" *ngFor="let good of goodsList" [attr.data-id]="good.id" (click)="goToDetail(good)">
+    <img [src]="good.cover" class="img" alt="">
+    <div class="list-footer">
+      <p class="desc">{{good.name}}</p>
+      <p class="money">￥<span>{{good.price}}</span></p>
+    </div>
+  </section>
+</ng-container>
+
+<!-- 无数据 -->
+<ng-template #nullData>
+  <page-null-good></page-null-good>
+</ng-template>

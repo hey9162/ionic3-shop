@@ -1,0 +1,27 @@
+<div [formGroup]="form" class="form-group">
+  <div class="group-dt">
+    <i [ngClass]="['iconfont', config.iconfont]"></i>
+    <label>{{ config.label }}</label>
+    <span *ngIf="config.isRequired" class="require">*</span>
+
+    <span *ngIf="form.get(config.name).dirty" class="danger">
+      <ng-container *ngIf="form.get(config.name).hasError('required')">输入内容不能为空</ng-container>
+      <ng-container *ngIf="form.get(config.name).hasError('pattern')">输入内容格式错误</ng-container>
+    </span>
+  </div>
+
+  <ng-container [ngSwitch]="config.controlType">
+    <div *ngSwitchCase="'textbox'" class="input-control">
+      <input [formControlName]="config.name" [type]="config.type" [value]="config.value" [attr.placeholder]="config.placeholder">
+    </div>
+
+    <div *ngSwitchCase="'pic'" class="flex">
+      
+    </div>
+
+    <div *ngSwitchCase="'dropdown'" class="input-control">
+      <!--  -->
+    </div>
+
+  </ng-container>
+</div>

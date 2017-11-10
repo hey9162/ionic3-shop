@@ -1,0 +1,35 @@
+<ion-header>
+
+  <ion-navbar color="white">
+    <button ion-button icon-only menuToggle>
+      <ion-icon name="menu" color="gray"></ion-icon>
+    </button>
+    <ion-searchbar (ionInput)="searchGoods($event)" placeholder="搜索"></ion-searchbar>
+  </ion-navbar>
+
+  <ion-toolbar>
+    <ion-segment [(ngModel)]="segment" (ionChange)="segmentChanged($event.value)" color="lucency">
+      <ion-segment-button value="1">综合</ion-segment-button>
+      <ion-segment-button value="2">销量</ion-segment-button>
+      <ion-segment-button value="3">评价</ion-segment-button>
+      <ion-segment-button value="4">新品</ion-segment-button>
+    </ion-segment>
+  </ion-toolbar> 
+
+</ion-header>
+
+
+<ion-content>
+
+  <good-li [goodsList]="dataList" class="main"></good-li>
+
+  <p *ngIf="hasData" [ngStyle]="{'padding-bottom':'25px', 'text-align':'center'}">没有更多了</p>
+
+  <ion-infinite-scroll (ionInfinite)="doInfinite($event,segmentType)">
+    <ion-infinite-scroll-content
+      loadingSpinner="bubbles"
+      loadingText="数据加载中...">
+    </ion-infinite-scroll-content>
+  </ion-infinite-scroll>
+
+</ion-content>

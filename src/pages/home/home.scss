@@ -1,0 +1,30 @@
+page-home {
+    .searchbar-ios{
+        background: #ffffff;
+        .searchbar-input{
+            background-color: #f2f2f2;
+        }
+    }
+    ion-header {
+        transition: top 1000ms cubic-bezier(.19, 1.12, .65, .91);
+    }
+    ion-content {
+        background-color: #efefef !important;
+    }
+    .main{
+        padding: 10px;
+        background-color: #ffffff;
+        &::after{
+            content: '';
+            display: block;
+            width: 0;
+            height: 0;
+            clear: both;
+        }
+        
+    }
+}
+.swiper-pagination-bullet-active{
+	background: #ffffff;
+	opacity: 0.8;
+}

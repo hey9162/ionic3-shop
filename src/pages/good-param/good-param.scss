@@ -1,0 +1,24 @@
+page-good-param {
+    ul{
+        margin: 0;
+    }
+    .sort-param{
+        min-height: 7.1rem;
+        ul{
+            padding-left: 10px;
+            padding-bottom: 10px;
+            background-color: #ffffff;
+            li{
+                height: 44px;
+                line-height: 44px;
+                border-bottom: 1px solid #ededed;
+                .param-tit{
+                    margin-right: 10px;
+                }
+                .param-detail{
+                    margin-right: 10px;
+                }
+            }
+        }
+    }
+}

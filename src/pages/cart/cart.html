@@ -1,0 +1,39 @@
+<ion-content>
+    <ng-container *ngIf="data?.length > 0; else nullData">
+        <ion-list *ngFor="let list of data;">
+                <ion-item-sliding>
+                        <ion-item>
+                            <ion-checkbox checked="selectAll" [(ngModel)]="list.state" (ionChange)="countMoney()"></ion-checkbox>
+                                <ion-avatar item-start>
+                                    <img class="cart-img" [src]="list.url" alt="">
+                                    <div class="content-right">
+                                        <p class="tit">{{list.name}}</p>
+                                        <p class="desc"><span>规格：</span><span>{{list.attr}}</span></p>
+                                        <p class="pic">￥{{list.noConfigPrice}}</p>
+                                        <p class="num">
+                                            <ion-icon class="sub" name="remove-circle" (click)="changenum(list,0)"></ion-icon>                 
+                                            <span class="number">{{list.number}}</span>
+                                            <ion-icon class="add" name="add-circle" (click)="changenum(list,1)"></ion-icon>             
+                                        </p>
+                                    </div>
+                                </ion-avatar>
+                        </ion-item>
+                    <ion-item-options side="right">
+                        <button ion-button color="primary" (click)="deleteData(list)">删除</button>
+                    </ion-item-options>
+                </ion-item-sliding>
+            </ion-list>
+    </ng-container>
+    <div class="total">
+        <div class="ctrl">
+            <ion-checkbox [(ngModel)]="selectAll" (ionChange)="totalChange(selectAll)"></ion-checkbox><span>全部取消</span>
+        </div>
+        <div class="center">合计：{{ total | number: '1.2-2' }}</div>
+        <div class="clearing" (click)="settlement(data)">结算({{leng}})</div>
+    </div>
+</ion-content>
+
+<!-- 无数据 -->
+<ng-template #nullData>
+    <page-null-good></page-null-good>
+</ng-template>

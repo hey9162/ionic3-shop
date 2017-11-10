@@ -1,0 +1,36 @@
+<ion-content>
+  <div class="banner">
+    <div class="head">
+      <img src="assets/images/head.png" alt="">
+      <br>
+      <span>勾勾手</span><ion-icon name="create" (click)="goToEdit()"></ion-icon>
+    </div>
+  </div>
+  <ion-list>
+    <button ion-item (click)="goToOrder('')">
+      <ion-icon name="reorder"></ion-icon>
+      全部订单
+    </button>  
+    <button ion-item (click)="goToOrder('1')">
+      <ion-icon name="card"></ion-icon>
+      待支付
+    </button>  
+    <button ion-item (click)="goToOrder('2')">
+      <ion-icon name="archive"></ion-icon>
+      待发货
+    </button>  
+    <button ion-item (click)="goToOrder('3')">
+      <ion-icon name="car"></ion-icon>
+      待收货
+    </button>  
+    <button ion-item (click)="goToOrder('4')">
+      <ion-icon name="megaphone"></ion-icon>
+      带评论
+    </button>  
+    <button ion-item (click)="goToAddress()">
+      <ion-icon name="pin"></ion-icon>
+      收货地址
+    </button>  
+  </ion-list>
+</ion-content>
+

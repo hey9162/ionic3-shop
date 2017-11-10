@@ -1,0 +1,13 @@
+<div class="page sort-param">
+    <ul class="guige-list" *ngIf="paramData?.length > 0; else nullData">
+        <!-- ngFor 与 ngIf 不能在同一标签元素里使用，可以嵌套使用  -->
+        <li *ngFor="let param of paramData" (click)="paramFn()"><span class="param-tit">{{param.title}}：</span>
+            <span class="param-detail" *ngFor="let spec of param.list">{{spec.tit}}
+            </span>
+        </li>
+    </ul>
+</div>
+<!-- 无数据 -->
+<ng-template #nullData>
+    没有数据
+</ng-template>

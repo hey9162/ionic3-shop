@@ -1,0 +1,12 @@
+<div *ngIf="datailData">
+    <div class="page sort-detail" [innerHTML]="datailData"
+    (click)="todo($event)"
+    ></div>
+</div>
+<br><br><br>
+<div *ngIf="param">
+    <h1>{{param}}</h1>
+</div>
+<div *ngIf="!datailData" #nullData>
+    没有数据
+</div>

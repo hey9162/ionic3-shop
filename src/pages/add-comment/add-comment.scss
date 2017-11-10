@@ -1,0 +1,55 @@
+page-add-comment {
+    .article{
+        background-color: #fff;
+        padding: 0 10px;
+    }
+    .tit{
+        padding:  10px 0 10px 10px;
+        display: flex;
+        line-height: 34px;
+        ion-icon{
+            font-size: 20px;
+            vertical-align: middle;
+            margin-right: 5px;
+            color: #cdb067;
+        }
+        border-bottom: 1px solid #ededed;
+    }
+    ion-textarea {
+        margin: 0 0 10px 0;
+        height: 100px;
+        textarea{
+            height: 100%;
+        }
+    }
+    .upimg{
+        font-size: 0;
+        padding-bottom: 10px;
+        img{
+            margin-bottom: 5px;
+            width: calc(33.33vw - 10px);
+            height: calc(33.33vw - 10px);
+            &:nth-child(3n - 1){
+                margin: 0 5px 5px 5px;
+            }
+        }
+    }
+    .img-content{
+        display: inline-block;
+        vertical-align: top;
+    }
+    .img-input{
+        display: inline-block;
+        position: relative;
+        width: calc(33.33vw - 10px);
+        height: calc(33.33vw - 10px);
+        input,img{
+            position: absolute;
+            width: 100%;
+            height: 100%;
+        }
+        input{
+            opacity: 0;
+        }
+    }
+}

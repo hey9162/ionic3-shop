@@ -1,0 +1,25 @@
+<ion-content>
+    <div class="pay-top">
+        <p class="">支付总额：<span class="total">&#165;{{totalData}}</span></p>
+    </div>
+    <ion-list>
+            
+        <ion-item>
+          <h2>还需支付</h2>
+          <p class="pic">{{mustData}}</p>
+        </ion-item>
+        <ion-item>
+            <p>支付方式</p>
+        </ion-item>
+        <ion-item>
+                <ion-avatar item-start>
+                        <div class="way">
+                                <ion-icon name="gouwuche"></ion-icon>
+                                    微信支付
+                            </div>
+                </ion-avatar>
+                <ion-checkbox checked="true" item-end></ion-checkbox>
+        </ion-item>
+    </ion-list>
+    <button ion-button>确认付款</button>
+</ion-content>

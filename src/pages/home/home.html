@@ -1,0 +1,18 @@
+<ion-header>
+    <ion-searchbar color="primary" placeholder="搜索"></ion-searchbar>
+</ion-header>
+
+<ion-content>
+  <div class="">
+    <ion-slides pager  *ngIf="slider?.length>0">
+      <ion-slide *ngFor="let list of slider"><img [src]="list.cover" alt=""></ion-slide>
+    </ion-slides>
+  </div>
+  <article class="main">
+    <good-li [goodsList]="goodsList"></good-li>
+    <p [style.text-align]="'center'" *ngIf="nullData">没有更多了</p>
+  </article>
+  <ion-infinite-scroll (ionInfinite)="doInfinite($event)">
+    <ion-infinite-scroll-content loadingSpinner="bubbles" loadingText="数据加载中..."></ion-infinite-scroll-content>
+  </ion-infinite-scroll>
+</ion-content>

@@ -1,0 +1,50 @@
+.scroll-content{
+    background-color: #f5f5f5;
+} 
+page-address {
+    
+    .list{
+        padding: 10px 0 0 10px;
+        font-size: 16px;
+        background: #fff;
+        margin-bottom: 10px;
+        p{
+            margin-bottom: 10px;
+            width: 98%;
+            line-height: 1.15;
+            span{
+                margin-right: 10px;
+            }
+        }
+    }
+    .footer{
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        border-top: 1px solid #ededed;
+        ion-checkbox,ion-icon{
+            margin-right: 10px;
+            vertical-align: middle;
+        }
+        ion-icon{
+            font-size: 26px;
+            color: #9f9f9f;
+        }
+        ion-item{
+            width: auto;
+            padding: 0;
+            border-bottom: none;
+        }
+        span{
+            margin-right: 10px;
+        }
+    }
+    .item-ios.item-block .item-inner{
+        border-bottom: none;
+    }
+    button{
+        position: fixed !important;
+        width: 100% !important;
+        bottom: 0;
+    }
+}

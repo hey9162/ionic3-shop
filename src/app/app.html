@@ -1,0 +1,8 @@
+<!-- 商品分类选择菜单 -->
+<ion-menu id="classifyMenu" type="overlay" [content]="content" [swipeEnabled]="false">
+  <ion-content class="classify-content">
+    <page-classify-menu></page-classify-menu>
+  </ion-content>
+</ion-menu>
+
+<ion-nav [root]="rootPage" #content swipeBackEnabled="false"></ion-nav>

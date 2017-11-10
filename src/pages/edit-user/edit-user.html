@@ -1,0 +1,18 @@
+<ion-content>
+  <ion-list>
+    <ion-item>
+      <h3 item-start>头像</h3>
+      <ion-avatar item-end class="content">
+        <input type="file" (change)="selectedFileOnChanged($event)" />
+        <img [src]="src" />   
+      </ion-avatar>
+      <ion-icon name="arrow-forward" item-end></ion-icon>
+    </ion-item>
+    <ion-item>
+      <h3 item-start>昵称</h3>
+      <h3 item-end><ion-input [(ngModel)]="petName" placeholder="请输入昵称"></ion-input></h3>
+    </ion-item>
+  </ion-list>
+  <button ion-button (click)="doSave()">保存</button>
+</ion-content>
+

@@ -1,0 +1,57 @@
+page-good-list {
+  .searchbar-input {
+    background: #f2f2f2 !important;
+  }
+  .content {
+    background-color: #efefef;
+  }
+  .main {
+    padding: 10px;
+    &:before,
+    &:after {
+      content: '';
+      display: table;
+    }
+    &:after {
+      clear: both;
+    }
+  }
+
+  .list-footer {
+    background-color: #fff !important;
+  }
+
+  .toolbar-background {
+    border-width: 0 !important;
+    background: #fff;
+  }
+
+  .segment .segment-button {
+    position: relative;
+    height: 100%;
+    line-height: 44px;
+    color: color($colors, gray);
+    font-size: 15px;
+    border-top: 1px solid #efefef;
+    &.segment-activated {
+      color: color($colors, primary);
+      &:before {
+        content: '';
+        position: absolute;
+        left: 50%;
+        bottom: 0;
+        width: 32px;
+        height: 2px;
+        background-color: color($colors, primary);
+        transform: translateX(-50%);
+      }
+    }
+  }
+
+  .segment-md-lucency .segment-button {
+    border-bottom: none;
+  }
+
+
+}
+

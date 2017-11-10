@@ -1,0 +1,74 @@
+<ion-content>
+  <div>
+    <ion-segment [(ngModel)]="segment" (ionChange)="segmentChanged($event._value)">
+      <ion-segment-button value="">
+        全部
+      </ion-segment-button>
+      <ion-segment-button value="1">
+        待支付
+      </ion-segment-button>
+      <ion-segment-button value="2">
+        待发货
+      </ion-segment-button>
+      <ion-segment-button value="3">
+        待收货
+      </ion-segment-button>
+      <ion-segment-button value="4">
+        待评价
+      </ion-segment-button>
+    </ion-segment>
+  </div>
+  <div *ngIf="data?.length > 0; else nullData">
+    <div class="order"  *ngFor="let list of data">
+      <div class="title">
+        订单号：<span>{{list.orderNum}}</span><br>
+        状 态： <span class="state" *ngIf="list.status == 1">待付款</span>
+        <span class="state" *ngIf="list.status == 2">待发货</span>
+        <span class="state" *ngIf="list.status == 3">已发货</span>
+        <span class="state" *ngIf="list.status == 4">待评价</span>
+      </div>
+      <div class="address">
+        <div class="dt">
+          收货地址
+        </div>
+        <div>
+          <p>{{list.address}}</p>
+          <p><span>{{list.name}}</span><span>{{list.phone}}</span></p>
+        </div>
+      </div>
+      <div class="detail">
+        <div class="img">
+          <img [src]="list.url" alt="">
+        </div>
+        <div class="right">
+          <p class="desc">{{list.productName}}</p>
+          <p class="guige">规格：<span>{{list.attrName}}</span></p>
+          <p class="foot">
+            <span class="pic">￥{{list.price}}</span><span class="num">&#215;{{list.number}}</span>
+          </p>
+        </div>
+      </div>
+      <div class="express">
+        <p>配送方式：<span>快递</span></p>
+        <p>{{list.freightMoney}}</p>
+      </div>
+      <div class="total">
+        共计：{{list.number}}<span>件</span>合计：<span>￥{{list.price * list.number + list.freightMoney}}</span>含运费(￥0.00)
+      </div>
+      <div class="footer">
+        <div *ngIf="list.status == 3">
+            <button class="state" >删除订单</button>
+        </div>
+        <div *ngIf="list.status == 4">
+            <button class="state"  (click)="goToComment()">去评价</button>
+            <button class="state">确认收货</button>
+        </div>
+      </div>
+    </div>
+  </div>
+  
+</ion-content>
+<!-- 无数据 -->
+<ng-template #nullData>
+  <page-null-good></page-null-good> 
+</ng-template>

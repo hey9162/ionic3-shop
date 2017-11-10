@@ -1,0 +1,22 @@
+<ion-content>
+  <div class="article">
+    <div class="tit">
+      <p>评分：</p>
+      <p>
+        <ion-icon *ngFor="let start of starts" name="star" [isActive]="start <= score? 'true': false"></ion-icon>
+      </p>
+    </div>
+    <div>
+        <ion-textarea placeholder="这里是你要填写评论的框"></ion-textarea>
+    </div>
+    <div class="upimg" >
+      <div *ngIf="listUrl.length != ''" class="img-content">
+          <img  *ngFor="let url of listUrl" [src]="url" alt="">
+      </div>
+      <div class="img-input" *ngIf="listUrl.length < 9">
+          <img src="assets/images/pic.png" alt="">
+          <input type="file" (change)="upImgs($event)"/>
+      </div>
+    </div>
+  </div>
+</ion-content>

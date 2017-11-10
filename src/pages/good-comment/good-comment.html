@@ -1,0 +1,26 @@
+<div class="page sort-comment">
+    <ul *ngIf="commentData?.length>0; else nullData">
+        <li *ngFor="let commen of commentData">
+            <div class="userinfo">
+                <div class="img">
+                    <img [attr.src]="commen.headimgurl" alt="">
+                </div>
+                <div class="name">
+                    <span>{{commen.name}}</span>
+                    <span>{{commen.createTime | date:'yy-MM-dd HH:mm:ss'}}</span>
+                </div>
+            </div>
+            <div class="evalcon">
+                <p class="text">{{commen.message}}</p>
+                <div class="evalpiclist" *ngIf="commen?.imgs>0">
+                    <img *ngFor="let src of commen.imgs;let i=index" [attr.src]="src" alt="" (click)="goToSwiper(commen.imglist,i)">
+                </div>
+            </div>
+            <div *ngIf="commen.replay" class="diabox">{{commen.replay}}</div>
+        </li>
+    </ul>
+</div>
+<!-- 无数据 -->
+<ng-template #nullData>
+    没有数据
+</ng-template>

@@ -1,0 +1,18 @@
+<ion-content>
+<div *ngIf="datas?.length > 0; else nullData">
+    <div class="list" *ngFor="let list of datas"> 
+      <p class="address">{{list.address}}</p>
+      <p><span class="name">{{list.name}}</span><span class="phone">{{list.phone}}</span></p>
+      <div class="footer">
+        <ion-item><ion-checkbox checked="{{list.isDefault == '1'? 'true': 'false'}}"></ion-checkbox><ion-label>默认地址</ion-label></ion-item>
+        <ion-item><span (click)="goToAdd(list)"><ion-icon name="document"></ion-icon >编辑</span><span (click)="deleteAddress(list.id)"><ion-icon name="remove-circle"></ion-icon>删除</span></ion-item>
+      </div>
+    </div>
+    <button ion-button full (click)="goToAdd()">新增收货地址</button>
+</div>
+  
+</ion-content>
+<!-- 无数据 -->
+<ng-template #nullData>
+  <page-null-good></page-null-good> 
+</ng-template>
